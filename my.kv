@@ -1,0 +1,102 @@
+<MyGrid>:
+
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 1
+
+            canvas:
+                Color:
+                    rgb: [0.1,0.1,0.1]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                id: update_date
+                text: "Last Update: loading"
+                color: 1,1,1,1
+                font_size: 40
+
+
+        GridLayout:
+            cols: 2
+
+            canvas:
+                Color:
+                    rgb: [0,0,0]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                text: "Total cases"
+                color: 1,1,1,1
+                font_size: 40
+
+            Label:
+                text: "loading"
+                color: 1,1,1,1
+                font_size:80
+                id: total_cases_box
+
+
+        GridLayout:
+            cols: 2
+
+            canvas:
+                Color:
+                    rgb: [0.1,0.1,0.1]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                text: "Total Deaths"
+                color: 1,1,1,1
+                font_size: 40
+
+
+            Label:
+                text: "loading"
+                color: 1,1,1,1
+                font_size: 80
+                id: deaths_box
+
+        GridLayout:
+            cols: 1
+
+            canvas:
+                Color:
+                    rgb: [0,0,0]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                text: "Recovered Cases"
+                color: 1,1,1,1
+                font_size: 40
+
+            Label:
+                text: "loading"
+                color: 1,1,1,1
+                font_size: 80
+                id: reco_cases_box
+
+
+
+        GridLayout:
+            cols: 1
+
+            Button:
+                id: button_change
+                text: "Refresh"
+                color: 1,1,1,1
+                font_size: 80
+                background_color: 0.2,0.2,0.2,1
+                background_down: "1,1,1,1"
+                on_press: root.change_text()
